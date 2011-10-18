@@ -6,6 +6,8 @@ Simple user registration, log-in and operation authentication framework
 This package offers a three file, basic user management system for
 websites that use PHP in the backend.
 
+WHEN USING THIS, MAKE SURE TO MODIFY THE SECURITY SETTINGS IN USER.PHP!!!
+
 The authentication script is very simple in use. Simply have the user.php
 script sitting somewhere that your other scripts can access it, and then
 start any independent PHP script with these lines:
