@@ -1,5 +1,10 @@
 <?php
+  date_default_timezone_set("America/Vancouver");
+
 	$data = false;
+
+	ini_set("display_errors", 1);
+	ini_set("error_reporting", E_ALL | E_STRICT);
 
 	// this is a demonstrator function, which gets called when new users register
 	function registration_callback($username, $email, $userdir)
@@ -37,9 +42,12 @@
 		<p>On the right you can see information pertaining to you, as current user. When
 		registering or logging in it will show your session identifier and authentication status, POST
 		information received by the user system, as well as the system's information and error log
-		content. The code can be downloaded from <a href="http://github.com/Pomax/Usered">github</a>.</p>
+		content. The code can be downloaded from <a href="http://github.com/Pomax/Usered">github</a>
+		or for those who just want a zip file, that's <a href="https://github.com/Pomax/Usered/zipball/master">also
+		available</a>.</p>
 
-		<table style="width: 100%;"><tr><td style="width: 24em;">
+
+		<table style="width: 100%; margin-top: 1em;"><tr><td style="width: 24em; padding-top:1em;">
 <?php		if(!$USER->authenticated) { ?>
 
 			<!-- Allow a new user to register -->
@@ -121,8 +129,8 @@
 <?php 		} ?>
 
 		</td><td style="padding-left: 4em;">
-
-			<p>session token for <?php echo $_SESSION["username"]; ?>: <?php echo $_SESSION["token"]; ?><br/>(authenticated: <?php echo ($USER->authenticated ? "yes" : "no");  echo ($USER->userdir? ", user data directory: $USER->userdir" : ""); ?>)</p>
+			<p>current user: <?php echo $_SESSION["username"]; ?><br>
+			   Session token for <?php echo $_SESSION["username"]; ?>: <?php echo $_SESSION["token"]; ?><br/>(authenticated: <?php echo ($USER->authenticated ? "yes" : "no");  echo ($USER->userdir? ", user data directory: $USER->userdir" : ""); ?>)</p>
 			<hr/>
 			<p>POST: <?php echo str_replace("\n", "<br/>\n\t\t\t", print_r($_POST, true)); ?></p>
 			<hr/>
