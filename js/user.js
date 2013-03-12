@@ -197,9 +197,9 @@ User = {
     var make = this.make;
 
     var form = this.make("form", {id: "usered_login_form", action: ".", method: "POST"});
-    add(form, make("label", {for: "usered_username", innerHTML: "user name"}));
+    add(form, make("label", {"for": "usered_username", innerHTML: "user name"}));
     add(form, make("input", {id: "usered_username", type: "text"}));
-    add(form, make("label", {for: "usered_password", innerHTML: "password"}));
+    add(form, make("label", {"for": "usered_password", innerHTML: "password"}));
     add(form, make("input", {id: "usered_password", type: "password"}));
     add(form, make("input", {id: "usered_login_button", type: "submit", value: "log in"}));
     add(parent, form);
