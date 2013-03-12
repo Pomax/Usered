@@ -18,7 +18,7 @@ User = {
 	 */
 	markInvalid: function(input, reason) {
 		var classes = "";
-		if(input.class) { classes = input.getAttribute("class"); }
+		if(input["class"]) { classes = input.getAttribute("class"); }
 		input.setAttribute("class", classes + " error");
 		input.title = reason;
 		return false; },
